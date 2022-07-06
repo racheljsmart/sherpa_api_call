@@ -11,7 +11,7 @@ const endPoint = "https://v2.sherpa.ac.uk/cgi/retrieve";
 
 //Sherpa API key for Florida State University
 //register for a key at http://www.sherpa.ac.uk/romeo/apiregistry.php
-const sherpaAPIkey = "E4D6B4AE-6CA4-11EC-89DC-08A26FA24E69";
+const sherpaAPIkey = "";
 //insert your API key inside the quotes
 
 //Google scripts will timeout if you run the script too often. This delay function is designed to space out requests. Comment out if you're testing and only running small batches (less than 10 at a time).
