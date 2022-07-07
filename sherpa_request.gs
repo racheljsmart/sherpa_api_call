@@ -33,7 +33,7 @@ function getSherpaData(issn) {
 
   //Sherpa API key for Florida State University
   //register for a key at http://www.sherpa.ac.uk/romeo/apiregistry.php
-  var sherpaAPIkey = "E4D6B4AE-6CA4-11EC-89DC-08A26FA24E69";
+  var sherpaAPIkey = "";
   //insert your API key inside the quotes
   var url = endPoint + '?item-type=publication&api-key=' + sherpaAPIkey + '&format=Json&filter=' + encodeURIComponent('[["issn","equals","') + issn + encodeURIComponent('"]]');
 
