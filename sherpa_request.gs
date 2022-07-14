@@ -62,17 +62,28 @@ function fixIssn(issn) {
   return issn;
 }
 
+//checks for 'published'
 function permPdfGet(txt) {
-  var permPub = txt.items[0].publisher_policy[0].permitted_oa[0];
-  //checks for 'published'
-  if (permPub.hasOwnProperty("article_version")) {
-    var articleVer = permPub.article_version;
-    if (articleVer.includes("published")) {
-      var permTxt = "Publisher PDF permitted";
+  var permTxt = 0;
+  var pubPol = txt.items[0].publisher_policy;
+  for (var i in pubPol) {
+    Logger.log("pubpol: " + i)
+    var permOA = pubPol[i].permitted_oa;
+    for (var x in permOA) {
+      Logger.log("permoa: " + x);
+      var articleVer = permOA[x].article_version.join();
+      var addOAFee = permOA[x].additional_oa_fee;
+      Logger.log(articleVer);
+      Logger.log(addOAFee);
+        if (articleVer.includes("published") && addOAFee === "no") {
+          Logger.log("Publisher PDF permitted");
+          return permTxt = "Publisher PDF permitted";
+        } else {
+          permTxt = "No publisher PDF";
+        }
     }
-    } else {
-    var permTxt = "No publisher PDF";
-    }
-    Logger.log(permTxt);
+  }
+  Logger.log(permTxt);
   return permTxt;
 }
+
