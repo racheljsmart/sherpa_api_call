@@ -1,7 +1,3 @@
-//Thoughts for data handling
-// - param destructuring to only select the object properties I need
-
-
 
 // test issn 1029-8479
 //const issn = "1029-8479";
@@ -53,12 +49,3 @@ function fixissn(issn){
   return issn;
 }
 
-// // checks if the issn is a journal that permits publisher pdf archiving
-// function pubpdf(issn) {
-//   const sherpaJson = getSherpaData(issn);
-
-//   // is array empty? is the issn invalid?
-
-
-
-// }
