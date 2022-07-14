@@ -1,17 +1,16 @@
 //Function: this is the main function that checks if the ISSN is a journal which permits publisher PDF archiving
 function pubpdf(issn) {  
-  //var issn = "2198-1833";
-  //var issn = "1029-8479";
+  //var issn = "2198-1833"; for testing
+  //var issn = "1029-8479"; for testing
   var text = getSherpaData(issn);
-   // checks to see if the issn is invalid
-  //var failText=text.search("<outcome>failed</outcome>");
-  //var notfound=text.search("<outcome>notFound</outcome>");
   // checks to see if the issn is missing
+  // checks to see if the issn is invalid
   if (issn == 00000000 || issn == 0000-0000 || issn == "") { 
     return ("blank ISSN")
   } else if (text.items.length == 0){
-    return ("ISSN invalid") }
-  else {  
+    return ("ISSN invalid") 
+  } else {  
+  //call the function that checks data and returns the result
   return permPdfGet(text);
   }
 }
@@ -45,6 +44,7 @@ function getSherpaData(issn) {
   return data;
 }
 
+//Helper function that repairs issns missing zeros. The zeros can be lost depending on where the data is being retrieved from.
 function fixIssn(issn) {
   Logger.log("Old issn " + issn);
   //if there's a dash in the ISSN, it need 9 characters instead of 8
@@ -62,7 +62,7 @@ function fixIssn(issn) {
   return issn;
 }
 
-//checks for 'published'
+//checking publisher policies that list 'published' versions as exceptable to share with "no additional fee". The logger statements exist for testing and debugging.
 function permPdfGet(txt) {
   var permTxt = 0;
   var pubPol = txt.items[0].publisher_policy;
