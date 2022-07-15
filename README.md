@@ -2,7 +2,7 @@
 Retrieves json data from the Sherpa API.
 
 ## File: WoSGrabberSherpa.js
-This scipt was written to be run in the browser console to test connecting with the sherpa API and examine the JSON data in the response. The JSON struction is heavily nested and much easier to read when displayed in the browser console that in the Apps Script's execution log.  
+This scipt was written to be run in the browser console to test connecting with the sherpa API and examine the JSON data in the response. The JSON structure is heavily nested and much easier to read when displayed in the browser console that in the Apps Script's execution log.  
 
 To run this in the browser, 
 1. I made a bare-bones html index file containing <script src="WoSGrabberSherpa.js"></script> within the body. This file is not included in the repo but is easy enough to make.
