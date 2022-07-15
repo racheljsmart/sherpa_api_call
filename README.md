@@ -1,6 +1,17 @@
 # sherpa_api_call
 Retrieves json data from the Sherpa API.
 
+## File: WoSGrabberSherpa.js
+This scipt was written to be run in the browser console to test connecting with the sherpa API and examine the JSON data in the response. The JSON struction is heavily nested and much easier to read when displayed in the browser console that in the Apps Script's execution log.  
+
+To run this in the browser, 
+1. I made a bare-bones html index file containing <script src="WoSGrabberSherpa.js"></script> within the <body>. This file is not included in the repo but is easy enough to make.
+2. I opened the index.html file in the Chrome browser
+3. Opened the Developer tools (menu -> More tools -> Developer tools). 
+4. In the console tab, type getSherpaData() and pass the issn as a string.
+5. Press Enter and wait.  
+
+The funtion returns a Promise and if the ISSN is valid will contian an object "items" containing array(s).
 
 ## File: sherpa_request.gs
 This script is intended for use via Google Sheets.
