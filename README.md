@@ -2,10 +2,10 @@
 Retrieves json data from the Sherpa API.
 
 
-#File: sherpa_request.gs
+## File: sherpa_request.gs
 This script is intended for use via Google Sheets.
 
-## Instructions: 
+### Instructions: 
 (A) Register for an API key at https://v2.sherpa.ac.uk/cgi/register then insert the key in the "Sherpa API key" section of the code.
 (1) Perform an affiliation search in a large bibliographic database, such as Scopus or Web of Science. Include the ISSN metadata in the database export, since the function depends on the ISSN to work. Export this search to a .csv file.
 (2) Import the .csv into a Google Spreadsheet with at a minimum, columns for the following: ISSN, pubpdf, acceptedVerGet, and embargo.
