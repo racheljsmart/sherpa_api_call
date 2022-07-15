@@ -27,3 +27,7 @@ This script is intended for use via Google Sheets.
 8. To avoid excessive usage, after running a set of ISSNs, copy and paste over the discovered values by going to Edit -> Paste special -> Paste values only. This will prevent your sheet from crashing when you open it later. Without adjusting the values all the scripts would run again and you may need to start again with a different sheet.  
 
 TIP: Beware of excessive use imposed by Google. Currently you are limited to 20,000 URL lookups per day. See https://docs.google.com/macros/dashboard for UrlFetch specifically.
+
+Two functions are still to be written:  
+1. acceptedVerGet() - returns whether an accepted manuscript can be shared
+2. embargo() - the embargo for the accepted manuscript
